@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: deezer-music-bot
+    env: python
+    region: frankfurt # Eng yaqin bo'lgan hududni tanlashingiz mumkin
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python main.py"
+    envVars:
+      - key: BOT_TOKEN
+        sync: false # Render'ning maxfiy kalitlar joyida (Environment variables) kiritasiz.
+      - key: DEEZER_ARL
+        sync: false # Deezer ARL kalitini shu yerga kiritish kerak
